@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Places
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
+
+  <ion-list>
+    <ion-item *ngFor="let place of places">
+      <ion-label>
+        <h3>{{place?.name}}</h3>
+        <p>{{place?.type}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

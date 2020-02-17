@@ -2,3 +2,18 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+.ion-margin-right{
+  margin-right: 16px;
+}
+
+.align-horizontal {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.width-50 {
+  width: 50%;
+}

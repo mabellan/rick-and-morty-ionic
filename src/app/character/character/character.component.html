@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar class="app-align-horizontal">
+    <ion-title>
+     {{character?.name}}
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [text]="''" defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-progress-bar *ngIf="loading" type="indeterminate"></ion-progress-bar>
+
+  <ion-card>
+    <img [src]="character?.image" />
+    <ion-card-header>
+      <ion-card-subtitle>{{character?.species}}</ion-card-subtitle>
+      <ion-card-title>{{character?.name}}</ion-card-title>
+
+    </ion-card-header>
+    <ion-card-content>
+      <ion-chip [color]="getColorFromStatus(character?.status)">
+        <ion-label>{{character?.status}}</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let episode of character?.episode">
+      <ion-label>
+        <h3>{{episode}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
